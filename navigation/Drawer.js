@@ -1,27 +1,13 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer'
 import {  HomeStack } from './Stack'
 import { StyleSheet, Text, View, Image, ImageBackground, ToastAndroid } from 'react-native'
 
-import AsyncStorage from '@react-native-async-storage/async-storage'
+
 
 const drawer = createDrawerNavigator()
 
 const Navigator = (props) => {
-
-    // const {signOutUser, token, firstName, profilePhoto} = props 
-    // console.log(props)
-    // useEffect(()=> {
-    //     const asyncStore = async () => {
-    //         let insideStorage = await AsyncStorage.getItem("token")
-    //         if (insideStorage){
-    //             const storage = await AsyncStorage.getItem("token")
-    //         return await props.signInLS(storage)
-    //         }
-    //     }
-    //     asyncStore()
-    // }, [])
-
 
     function LogoTitle() {
         return (
@@ -37,10 +23,7 @@ const Navigator = (props) => {
             <ImageBackground  style={styles.drawerCustom}>
                 <DrawerContentScrollView {...props}>
                     <View style={styles.containerUserFoto}>
-
                         <Image style={{ width: 50, height: 50 }} source={require('../assets/userIcon.png')} />
-                        {/* <Image style={styles.userProfile} source={{ uri: profilePhoto }} /> */}
-
                     </View>
                     <DrawerItemList {...props} />
                   
@@ -82,17 +65,6 @@ const styles = StyleSheet.create({
 
 })
 
-// const mapStateToProps = (state) => {
-//     return{
-//         token: state.users.token,
-//         firstName: state.users.firstName,
-//         profilePhoto: state.users.profilePhoto
-//     }
-// }
 
-// const mapDispatchToProps = {
-//     signInLS: userActions.signInLS,
-// signOutUser: userActions.signOutUser
-// }
 
 export default (Navigator)

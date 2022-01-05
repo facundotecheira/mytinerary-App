@@ -17,7 +17,7 @@ LogBox.ignoreAllLogs(true)
 
 
 const App =() => {
-  // const globalStore = createStore(rootReducer, applyMiddleware(thunk))
+
   let [fontsLoaded] = useFonts({
     Italianno_400Regular,
     ZillaSlabHighlight_700Bold,
@@ -29,9 +29,9 @@ const App =() => {
   }else{
     return (
        <NavigationContainer>
-         {/* <Provider store={globalStore}> */}
+        
             <Navigator/>
-          {/* </Provider> */}
+         
        </NavigationContainer>
   )
 }
